@@ -1,4 +1,5 @@
 body {
+  /* background-color: rgb(253, 253, 253); */
   background-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
@@ -13,12 +14,14 @@ body {
   position: relative;
   /* top: -100px */
 }
-.main_title{
+
+.main_title {
   text-decoration: none;
   color: white;
 }
-.main_title:hover{
-color: red;
+
+.main_title:hover {
+  color: red;
 }
 
 #main_img {
@@ -32,8 +35,8 @@ color: red;
 /* 카드 전체 */
 #movie-container {
   /* background-color: rgb(46, 46, 46); */
-  position: relative;
-  top: 100px;
+  /* position: relative; */
+  /* top: 100px; */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -41,12 +44,15 @@ color: red;
   justify-content: center;
 }
 
+#card>img {
+  height: 400px;
+}
+
 #card {
   background-color: white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 1px;
-  margin: 1px;
+  padding: 10px;
   height: 500px;
 }
 
@@ -157,8 +163,11 @@ color: red;
   border-radius: 30px;
 }
 
-.modal_bookadd,
-.modal_bookminus,
+/* 북마크 */
+
+
+#modal_bookadd,
+#modal_bookminus,
 .modal_close_btn_box {
   /* 버튼 왼쪽 상단 */
   display: flex;
@@ -177,8 +186,8 @@ color: red;
   font-weight: bold;
 }
 
-.modal_bookadd:hover,
-.modal_bookminus:hover,
+#modal_bookadd:hover,
+#modal_bookminus:hover,
 .close_btn:hover {
   color: red;
 }

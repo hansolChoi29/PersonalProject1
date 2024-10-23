@@ -12,11 +12,11 @@ const modalMovieDate = document.querySelector('.modal_info_date');
 const modalMovieRating = document.querySelector('.modal_info_rating');
 const modalMovieImgItem = document.querySelector('.modal_img_item');
 const modalCloseBtn = document.querySelector('.close_btn');
+// 북마크 관련 변수
+const modalAddBtn = document.getElementById('modal_bookadd');
+const modalMinusBtn = document.getElementById('modal_bookminus');
 
-
-
-//북마크 
-// const bookAddBtn = document.querySelector('.modal_bookadd')
+let bookmarkPageState = false;
 
 // 모든 영화
 let allMovies = [];
@@ -67,7 +67,7 @@ searchInput.addEventListener('input', () => {
     fetchMovies();
   }
 });
-//
+
 
 getMovieData();
 // 영화 정보 렌더링
@@ -159,18 +159,17 @@ function scrollAble() {
 
 
 
-// 북마크 개같은녀석..
-// 북마크 추가 버튼 선택
-const modalAddBtn = document.querySelector('.modal_bookadd');
-// 북마크 추가 기능
 modalAddBtn.addEventListener('click', () => {
+
   // 모달에서 영화 ID, 제목
   const movieId = modalMovieTitle.getAttribute('data-id');
   const movieTitle = modalMovieTitle.innerHTML;
   const moviePoster = modalMovieImgItem.src; // 포스터 경로 가져오기
   const movieRating = modalMovieRating.innerHTML; // 평점 가져오기
+
   // 현재 저장된 북마크 목록 불러오기
   const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
+
   // 중복 방지: 이미 북마크에 있는지 확인
   if (!bookmarks.some(movie => movie.id === parseInt(movieId))) {
     bookmarks.push({
@@ -187,48 +186,73 @@ modalAddBtn.addEventListener('click', () => {
   } else {
     alert('이미 북마크에 추가된 영화입니다.');
   }
+
 });
 
 
 // 북마크 제거 버튼 선택
-const modalRemoveBtn = document.querySelector('.modal_bookminus');
-// 북마크 제거 기능
-modalRemoveBtn.addEventListener('click', () => {
+modalMinusBtn.addEventListener('click', () => {
   // 모달에서 영화 ID 가져오기
   const movieId = modalMovieTitle.getAttribute('data-id');
   // 현재 저장된 북마크 목록 불러오기
   const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
   // 제거할 영화 필터링
   const updatedBookmarks = bookmarks.filter(movie => movie.id !== parseInt(movieId));
+
   // 로컬 스토리지에 업데이트된 북마크 목록 저장
   localStorage.setItem('bookmarkList', JSON.stringify(updatedBookmarks));
-  alert('북마크 제거 완료!');
-});
+  if (bookmarkPageState) {
 
+
+    // console.log(2);
+    // loadBookmarks()
+    // console.log(1);
+  }
+
+  alert('북마크 제거 완료!');
+  //북마크 보기페이지에 대한 상태
+});
 
 // 앱 초기화 시 북마크 로드
 function loadBookmarks() {
-  // 저장된 북마크 목록 불러오기
   const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
-  const bookmarkContainer = document.createElement('bookmark-container');
+  // 저장된 북마크 목록 불러오기
+  const movieId = modalMovieTitle.getAttribute('data-id');
+  const isBookmarked = bookmarks.some((movie) => movie.id === parseInt(movieId));
+  if (isBookmarked) {
+    modalAddBtn.style.display = "none";
+    modalMinusBtn.style.display = "block";
+  } else {
+    modalAddBtn.style.display = "block";
+    modalMinusBtn.style.display = "none";
+  }
+
+
+  // const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
+  const bookmarkContainer = document.getElementById('bookmark-container');
   bookmarkContainer.innerHTML = ''; // 초기화
   // 북마크 목록을 화면에 표시
   bookmarks.forEach(movie => {
     const bookmarkElement = document.createElement('div');
-    bookmarkElement.innerHTML = `<p>${movie.title}</p>`;
+    bookmarkElement.className = 'bookcard'; // CSS 클래스 추가
+
+
     bookmarkContainer.appendChild(bookmarkElement);
   });
-}
-// 앱 초기화 시 북마크 로드 호출
-loadBookmarks();
 
+
+
+}
+//누르면 히든
 
 // 북마크 버튼 선택
 const bookmarkBtn = document.querySelector('.bookmark-Btn');
 bookmarkBtn.addEventListener('click', () => {
+  bookmarkPageState = true;
   const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
   // 영화 컨테이너 초기화
   movieContainer.innerHTML = '';
+  console.log(bookmarkBtn);
   // 북마크된 영화가 없을 경우 메시지 표시
   if (bookmarks.length === 0) {
     movieContainer.innerHTML = '<p>북마크가 없습니다.</p>';
@@ -240,7 +264,7 @@ bookmarkBtn.addEventListener('click', () => {
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
-      <div id="card" data-id="${movie.id}">
+       <div id="card" data-id="${movie.id}">
         <h3 class="movie-title">${movie.title}</h3>
         <img src="${movie.poster}" />
       </div>

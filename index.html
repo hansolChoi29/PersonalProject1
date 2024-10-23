@@ -11,7 +11,8 @@
 <body>
   <div class="header_box">
     <div id="title">
-      <img src="https://img.freepik.com/free-photo/view-3d-cinema-theatre-room_23-2150866053.jpg?semt=ais_hybrid" alt="인기영화목록" id="main_img">
+      <img src="https://img.freepik.com/free-photo/view-3d-cinema-theatre-room_23-2150866053.jpg?semt=ais_hybrid"
+        alt="인기영화목록" id="main_img">
       <h1><a href="http://211.104.70.59:5501/" class="main_title">인기 영화 목록</a></h1>
       <input placeholder="영화를 검색하세요..." id="query" class="search" />
       <div id="bookmark">
@@ -19,16 +20,15 @@
       </div>
     </div>
   </div>
-  
+
   <div id="movie-container"></div>
   <div id="bookmark-container"></div> <!-- 북마크 컨테이너 추가 -->
-  
   <div class="modal">
     <div class="modal_popup">
       <div class="modal_img_box">
         <div class="modal_close_btn_box">
-          <button type="button" class="modal_bookadd"> 북마크 추가</button>
-          <button type="button" class="modal_bookminus">북마크 제거</button>
+          <button type="button" id="modal_bookadd"> 북마크 추가</button>
+          <button type="button" id="modal_bookminus">북마크 제거</button>
           <button type="button" class="close_btn">X</button>
         </div>
         <img class="modal_img_item" src="" alt="" />
@@ -45,7 +45,7 @@
       </div>
     </div>
   </div>
-  
+
   <script type="module" src="script.js"></script>
 </body>
 
