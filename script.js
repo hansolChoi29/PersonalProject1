@@ -1,4 +1,3 @@
-// ⭐
 const TMDB_API_KEY = '839ae1e9d19093dbd59c75697bc8a0cc';
 
 const movieContainer = document.getElementById('movie-container');
@@ -17,7 +16,7 @@ const modalAddBtn = document.getElementById('modal_bookadd');
 const modalMinusBtn = document.getElementById('modal_bookminus');
 
 let bookmarkPageState = false;
-
+let bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
 // 모든 영화
 let allMovies = [];
 
@@ -178,8 +177,7 @@ modalAddBtn.addEventListener('click', () => {
       poster: moviePoster, // 포스터 저장
       rating: movieRating // 평점 저장
     });
-    // 새로운 북마크 추가
-    // bookmarks.push({ id: parseInt(movieId), title: movieTitle });
+
     // 로컬 스토리지에 북마크 목록 저장
     localStorage.setItem('bookmarkList', JSON.stringify(bookmarks));
     alert('북마크 추가 완료!');
@@ -202,11 +200,8 @@ modalMinusBtn.addEventListener('click', () => {
   // 로컬 스토리지에 업데이트된 북마크 목록 저장
   localStorage.setItem('bookmarkList', JSON.stringify(updatedBookmarks));
   if (bookmarkPageState) {
-
-
-    // console.log(2);
-    // loadBookmarks()
-    // console.log(1);
+    movieContainer.innerHTML = '';
+    loadBookmarks();
   }
 
   alert('북마크 제거 완료!');
@@ -214,36 +209,45 @@ modalMinusBtn.addEventListener('click', () => {
 });
 
 // 앱 초기화 시 북마크 로드
+
 function loadBookmarks() {
-  const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
+  const bookmarks = JSON.parse(localStorage.getItem("bookmarkList")) || [];
   // 저장된 북마크 목록 불러오기
-  const movieId = modalMovieTitle.getAttribute('data-id');
-  const isBookmarked = bookmarks.some((movie) => movie.id === parseInt(movieId));
-  if (isBookmarked) {
-    modalAddBtn.style.display = "none";
-    modalMinusBtn.style.display = "block";
-  } else {
-    modalAddBtn.style.display = "block";
-    modalMinusBtn.style.display = "none";
-  }
 
-
-  // const bookmarks = JSON.parse(localStorage.getItem('bookmarkList')) || [];
-  const bookmarkContainer = document.getElementById('bookmark-container');
-  bookmarkContainer.innerHTML = ''; // 초기화
+  const bookmarkContainer = document.getElementById("bookmark-container");
+  bookmarkContainer.innerHTML = ""; // 초기화
   // 북마크 목록을 화면에 표시
-  bookmarks.forEach(movie => {
-    const bookmarkElement = document.createElement('div');
-    bookmarkElement.className = 'bookcard'; // CSS 클래스 추가
-
-
-    bookmarkContainer.appendChild(bookmarkElement);
+  bookmarks.forEach((movie) => {
+    const movieElement = document.createElement("div");
+    movieElement.classList.add("movie");
+    movieElement.innerHTML = `
+         <div id="card" data-id="${movie.id}">
+          <h3 class="movie-title">${movie.title}</h3>
+          <img src="${movie.poster}" />
+        </div>
+      `;
+    movieContainer.appendChild(movieElement);
   });
-
-
-
 }
-//누르면 히든
+// function loadBookmarks() {
+//   // 저장된 북마크 목록 불러오기
+//   const movieId = modalMovieTitle.getAttribute('data-id');
+//   const isBookmarked = bookmarks.some((movie) => movie.id === parseInt(movieId));
+//   const bookmarkContainer = document.getElementById('bookmark-container');
+//   bookmarkContainer.innerHTML = '';
+//   bookmarks.forEach(movie => {
+//     const movieElement = document.createElement("div");
+//     movieElement.classList.add("movie");
+//     movieElement.innerHTML = `
+//        <div id="card" data-id="${movie.id}">
+//         <h3 class="movie-title">${movie.title}</h3>
+//         <img src="${movie.poster}" />
+//       </div>
+//     `;
+//     movieContainer.appendChild(movieElement);
+//   });
+// }
+
 
 // 북마크 버튼 선택
 const bookmarkBtn = document.querySelector('.bookmark-Btn');
@@ -260,47 +264,5 @@ bookmarkBtn.addEventListener('click', () => {
   }
 
   // 북마크된 영화 렌더링
-  bookmarks.forEach(movie => {
-    const movieElement = document.createElement("div");
-    movieElement.classList.add("movie");
-    movieElement.innerHTML = `
-       <div id="card" data-id="${movie.id}">
-        <h3 class="movie-title">${movie.title}</h3>
-        <img src="${movie.poster}" />
-      </div>
-    `;
-    movieContainer.appendChild(movieElement);
-  });
+  loadBookmarks();
 });
-
-// 북마크
-//배열메소드 필수, 함수만들고 버튼에 함수넣기,
-// some, filter, find 배열메소드 넣기
-
-
-// bookAddBtn.addEventListener('click', function savebook() {
-//   const input = document.getElementById('query').value;
-//   localStorage.setItem('myInput', input);
-//   alert('북마크 추가!!')
-// })
-
-// //값은 반드시 문자열로 저장.
-// localStorage.setItem("datalist", data);
-// // //JSON.strigfy()를 통해 객체를 문자열로 변환.
-// localStorage.setItem("datalist", JSON.stringfy());
-// // //여기서 문제는 setItem()을 해주면
-// // //value가 배열처럼 쌓이는게 아니라 새로 넣어준 값으로 변환.
-// // // JSON.stringify: 객체 -> 문자열
-// // // JSON.parse: 문자열 -> 객체
-// // //배열처럼 값을 넣어주기 위해서는
-// // //배열을 하나 만들어 주고 배열에 하나씩 새로운 값을 넣고
-// // //데이터를 담은 배열을 setItem() 해줘야 함.
-// const addData = () => {
-// //   //localstorage에 key: dataList, value: data가 있으면 불러오고 없으면 [] 빈 배열을 할당
-//   const newbookmark = JSON.parse(localStorage.getItem("bookmarkList")) || [];
-//   dataArray.push(data) //data는 추가할 데이터 객체
-//   localStorage.setItem("dataList", JSON.stringify(dataArray));
-// }//getItem을 통해 해당 키에 있는 데이터들을 불러올 수 있음
-// console.log(newbook)
-
-// localStorage.removeItem('datalist')
