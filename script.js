@@ -229,25 +229,6 @@ function loadBookmarks() {
     movieContainer.appendChild(movieElement);
   });
 }
-// function loadBookmarks() {
-//   // 저장된 북마크 목록 불러오기
-//   const movieId = modalMovieTitle.getAttribute('data-id');
-//   const isBookmarked = bookmarks.some((movie) => movie.id === parseInt(movieId));
-//   const bookmarkContainer = document.getElementById('bookmark-container');
-//   bookmarkContainer.innerHTML = '';
-//   bookmarks.forEach(movie => {
-//     const movieElement = document.createElement("div");
-//     movieElement.classList.add("movie");
-//     movieElement.innerHTML = `
-//        <div id="card" data-id="${movie.id}">
-//         <h3 class="movie-title">${movie.title}</h3>
-//         <img src="${movie.poster}" />
-//       </div>
-//     `;
-//     movieContainer.appendChild(movieElement);
-//   });
-// }
-
 
 // 북마크 버튼 선택
 const bookmarkBtn = document.querySelector('.bookmark-Btn');
