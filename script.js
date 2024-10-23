@@ -77,7 +77,6 @@ function displayMovies(movies) {
     movieContainer.innerHTML = '<p>영화를 찾을 수 없습니다</p>';
     return;
   }
-
   movies.forEach((movie) => {
     let stars = ''; // 별을 저장할 변수 초기화
     const vote_average = movie.vote_average; // 평점 가져오기
@@ -181,7 +180,7 @@ modalAddBtn.addEventListener('click', () => {
       rating: movieRating // 평점 저장
     });
     // 새로운 북마크 추가
-    bookmarks.push({ id: parseInt(movieId), title: movieTitle });
+    // bookmarks.push({ id: parseInt(movieId), title: movieTitle });
     // 로컬 스토리지에 북마크 목록 저장
     localStorage.setItem('bookmarkList', JSON.stringify(bookmarks));
     alert('북마크 추가 완료!');
@@ -243,6 +242,7 @@ bookmarkBtn.addEventListener('click', () => {
     movieElement.innerHTML = `
       <div id="card" data-id="${movie.id}">
         <h3 class="movie-title">${movie.title}</h3>
+        <img src="${movie.poster}" />
       </div>
     `;
     movieContainer.appendChild(movieElement);
