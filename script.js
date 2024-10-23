@@ -67,7 +67,7 @@ searchInput.addEventListener('input', () => {
     fetchMovies();
   }
 });
-
+//
 
 getMovieData();
 // 영화 정보 렌더링
