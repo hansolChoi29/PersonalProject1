@@ -1,0 +1,229 @@
+body {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 메인타이틀 */
+#title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* top: -100px */
+}
+.main_title{
+  text-decoration: none;
+  color: white;
+}
+.main_title:hover{
+color: red;
+}
+
+#main_img {
+  background-color: red;
+  width: 100%;
+  height: 300px;
+  opacity: 0.6;
+  object-fit: cover;
+}
+
+/* 카드 전체 */
+#movie-container {
+  /* background-color: rgb(46, 46, 46); */
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 12px;
+  justify-content: center;
+}
+
+#card {
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 1px;
+  margin: 1px;
+  height: 500px;
+}
+
+#card :hover {
+  opacity: 0.7;
+}
+
+
+/* 영화사진 */
+.poster {
+  width: 270px;
+  height: 350px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+/* 평점, 제목 */
+.movie-rating,
+.movie-title {
+  margin: 5px;
+  padding: 5px;
+  inline-size: 150px;
+  overflow: hidden;
+  font-size: 19px;
+}
+
+
+/* 검색창 */
+.search {
+  width: 500px;
+  height: 25px;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 18px;
+}
+
+
+
+/* 검색버튼 */
+#moveSch {
+  border: solid 1px;
+  color: white;
+  position: relative;
+  right: -300px;
+  top: -45px;
+  background: none;
+  width: 75px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+#moveSch:hover {
+  color: red;
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* bookamrk */
+.bookmark-Btn {
+  margin: 30px;
+  background: none;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.bookmark-Btn:hover {
+  color: red;
+  background-color: gray;
+}
+
+
+/*모달 팝업 영역 스타일링*/
+.modal {
+  /*팝업 배경*/
+  display: none;
+  /*평소에는 보이지 않도록*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal_popup {
+  /*팝업*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 430px;
+  transform: translate(-50%, -50%);
+  /* padding: 20px; */
+  border-radius: 5px;
+  background-color: rgb(39, 39, 39);
+  gap: 5px;
+  flex-direction: column;
+  color: white;
+  transition: box-shadow 0.2s;
+  border: none;
+  border-radius: 30px;
+}
+
+.modal_bookadd,
+.modal_bookminus,
+.modal_close_btn_box {
+  /* 버튼 왼쪽 상단 */
+  display: flex;
+  justify-content: end;
+  margin: 8px;
+  background: none;
+  border: none;
+}
+
+.close_btn {
+  background: none;
+  border: none;
+  color: rgb(248, 248, 248);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal_bookadd:hover,
+.modal_bookminus:hover,
+.close_btn:hover {
+  color: red;
+}
+
+.modal_img_box {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 15px;
+}
+
+.modal_img_item {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  ;
+}
+
+.modal_info_box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal_info_title {
+  margin: 22px;
+  position: relative;
+  top: 28px;
+}
+
+.modal_info_p {
+  margin: 15px;
+  font-weight: bold;
+}
+
+.modal_info_comment {
+  font-size: 12px;
+  margin: 15px;
+}
+
+
+/* 외부 스크롤
+.scroll_disable {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+  touch-action: none;
+} */

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>영화검색사이트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header_box">
+    <div id="title">
+      <img src="https://img.freepik.com/free-photo/view-3d-cinema-theatre-room_23-2150866053.jpg?semt=ais_hybrid" alt="인기영화목록" id="main_img">
+      <h1><a href="http://211.104.70.59:5501/" class="main_title">인기 영화 목록</a></h1>
+      <input placeholder="영화를 검색하세요..." id="query" class="search" />
+      <div id="bookmark">
+        <button type="button" class="bookmark-Btn">bookmark</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="movie-container"></div>
+  <div id="bookmark-container"></div> <!-- 북마크 컨테이너 추가 -->
+  
+  <div class="modal">
+    <div class="modal_popup">
+      <div class="modal_img_box">
+        <div class="modal_close_btn_box">
+          <button type="button" class="modal_bookadd"> 북마크 추가</button>
+          <button type="button" class="modal_bookminus">북마크 제거</button>
+          <button type="button" class="close_btn">X</button>
+        </div>
+        <img class="modal_img_item" src="" alt="" />
+      </div>
+      <div class="modal_info_box">
+        <h3 class="modal_info_title"></h3>
+        <p class="modal_info_comment"></p>
+        <p class="modal_info_p">
+          개봉일 : <span class="modal_info_date"></span>
+        </p>
+        <p class="modal_info_p">
+          평점 : <span class="modal_info_rating"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
