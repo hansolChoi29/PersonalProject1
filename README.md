@@ -20,17 +20,18 @@
 3. 북마크<br>
 북마크페이지에 영화가 없으면 북마크가 없다는 문구가 뜹니다.<br>
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FG9zWd%2FbtsKh77ouHB%2Fn7NVdErbIKEacSG7GzsrPk%2Fimg.png)   
-북마크 추가 버튼을 누르면 추가문구와 함께 북마크페이지에 저장됩니다.<br>
+
+* 북마크 추가 버튼을 누르면 추가문구와 함께 북마크페이지에 저장됩니다.<br>
 
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcpdF33%2FbtsKhKxT6Cr%2F96KeN4bNbZkLwuEzgCdZaK%2Fimg.png)   
 
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbuIsU9%2FbtsKinvsRen%2FbWEbQtTHydodJPkiD8NTkk%2Fimg.png)   
 
-북마크 페이지에 들어가면 저장된 영화가 뜹니다.<br>
+* 북마크 페이지에 들어가면 저장된 영화가 뜹니다.<br>
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnK75D%2FbtsKh1e8Hxr%2FKiCKC0GZErmU2JgnRW1WL1%2Fimg.png)   
 
 
 
-북마크 제거도 가능하게 만들었습니다.<br>
+* 북마크 제거도 가능하게 만들었습니다.<br>
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbuIsU9%2FbtsKinvsRen%2FbWEbQtTHydodJPkiD8NTkk%2Fimg.png)   
 
