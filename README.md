@@ -25,8 +25,6 @@
 
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcpdF33%2FbtsKhKxT6Cr%2F96KeN4bNbZkLwuEzgCdZaK%2Fimg.png)   
 
-![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbuIsU9%2FbtsKinvsRen%2FbWEbQtTHydodJPkiD8NTkk%2Fimg.png)   
-
 * 북마크 페이지에 들어가면 저장된 영화가 뜹니다.<br>
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnK75D%2FbtsKh1e8Hxr%2FKiCKC0GZErmU2JgnRW1WL1%2Fimg.png)   
 
