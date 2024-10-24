@@ -1,4 +1,3 @@
-// ⭐1023
 const TMDB_API_KEY = '839ae1e9d19093dbd59c75697bc8a0cc';
 
 const movieContainer = document.getElementById('movie-container');
@@ -68,7 +67,6 @@ searchInput.addEventListener('input', () => {
   }
 });
 
-
 getMovieData();
 // 영화 정보 렌더링
 function displayMovies(movies) {
@@ -106,7 +104,6 @@ function displayMovies(movies) {
     movieContainer.appendChild(movieElement); // 영화 요소 추가
   });
 }
-
 
 // 검색기능
 searchInput.addEventListener("input", () => {
@@ -160,7 +157,6 @@ function scrollAble() {
 
 
 modalAddBtn.addEventListener('click', () => {
-
   // 모달에서 영화 ID, 제목
   const movieId = modalMovieTitle.getAttribute('data-id');
   const movieTitle = modalMovieTitle.innerHTML;
@@ -203,14 +199,13 @@ modalMinusBtn.addEventListener('click', () => {
   if (bookmarkPageState) {
     movieContainer.innerHTML = '';
     loadBookmarks();
+    alert('북마크 제거 완료!');
+  } else {
+    alert('북마크로 설정되어있지 않습니다.')
   }
-
-  alert('북마크 제거 완료!');
-  //북마크 보기페이지에 대한 상태
 });
 
 // 앱 초기화 시 북마크 로드
-
 function loadBookmarks() {
   const bookmarks = JSON.parse(localStorage.getItem("bookmarkList")) || [];
   // 저장된 북마크 목록 불러오기
@@ -230,25 +225,6 @@ function loadBookmarks() {
     movieContainer.appendChild(movieElement);
   });
 }
-// function loadBookmarks() {
-//   // 저장된 북마크 목록 불러오기
-//   const movieId = modalMovieTitle.getAttribute('data-id');
-//   const isBookmarked = bookmarks.some((movie) => movie.id === parseInt(movieId));
-//   const bookmarkContainer = document.getElementById('bookmark-container');
-//   bookmarkContainer.innerHTML = '';
-//   bookmarks.forEach(movie => {
-//     const movieElement = document.createElement("div");
-//     movieElement.classList.add("movie");
-//     movieElement.innerHTML = `
-//        <div id="card" data-id="${movie.id}">
-//         <h3 class="movie-title">${movie.title}</h3>
-//         <img src="${movie.poster}" />
-//       </div>
-//     `;
-//     movieContainer.appendChild(movieElement);
-//   });
-// }
-
 
 // 북마크 버튼 선택
 const bookmarkBtn = document.querySelector('.bookmark-Btn');
