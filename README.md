@@ -1,5 +1,5 @@
 ## PROJECT: 영화 검색 사이트
-모든 영화를 불러온 브라우저에서 인기영화를 검색하는 사이트 입니다. <br>
+모든 영화를 불러온 브라우저에서 인기영화를 검색하는 사이트입니다. <br>
 영화 포스터를 클릭하면 영화 소개페이지가 나옵니다.
 ![title](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcfVSfI%2FbtsKg5bKvS4%2FmcYpTJpAgoKCDSxKMaTKMK%2Fimg.png)   
 
